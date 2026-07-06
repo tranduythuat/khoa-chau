@@ -82,17 +82,12 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const form = document.forms["rsvp-form"];
-  const formNotVows = document.forms["rsvp-form-not-vows"];
   if (form) {
-    form.addEventListener("submit", (e) => handleFormSubmit(e, "vows"));
-  }
-
-  if (formNotVows) {
-    formNotVows.addEventListener("submit", (e) => handleFormSubmit(e, "not-vows"));
+    form.addEventListener("submit", (e) => handleFormSubmit(e));
   }
 });
 
-async function handleFormSubmit(e, formType) {
+async function handleFormSubmit(e) {
   e.preventDefault();
 
   const form = e.target;
@@ -119,9 +114,11 @@ async function handleFormSubmit(e, formType) {
     },
   });
 
-  const url = formType === "vows" 
-    ? "/exec?sheet=vows" 
-    : "/exec?sheet=not-vows";
+  const url = "https://script.google.com/macros/s/AKfycbwBscCMUK2XIl9wS8_uljgRqXOeH3eCmPelgP5wDQ3iGem5sU6h9N1KCFJdiljE5ZvVww/exec?sheet=confirm"
+
+  // const url = formType === "vows" 
+  //   ? "/exec?sheet=vows" 
+  //   : "/exec?sheet=not-vows";
 
   try {
     const res = await fetch(url, {
