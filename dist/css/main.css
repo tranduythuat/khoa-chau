@@ -931,7 +931,7 @@ div:where(.swal2-container) img:where(.swal2-image) {
 }
 
 div:where(.swal2-container) div:where(.swal2-actions) {
-  margin: auto;
+  margin: auto !important;
 }
 
 .qrcode-box {
@@ -978,7 +978,7 @@ div:where(.swal2-container) div:where(.swal2-actions) {
 
 @media (max-width: 500px) {
   div:where(.swal2-container) button:where(.swal2-styled):where(.swal2-confirm) {
-    font-size: 3.2vw;
+    font-size: 3.2vw !important;
   }
   .qrcode-box .item .info {
     font-size: 2.8vw;
